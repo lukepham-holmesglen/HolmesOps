@@ -4,19 +4,50 @@ using TMPro;
 
 public class WaypointToggleSystem : MonoBehaviour
 {
-    public Transform playerCamera;
-    public Transform finalWaypoint;
     public RectTransform waypointIcon;
     public TextMeshProUGUI toggleText;
 
     public float edgeBuffer = 30f;
 
+    private Transform playerCamera;
+    private Transform finalWaypoint;
     private Canvas canvas;
     private RectTransform canvasRect;
     private bool isWaypointActive = false;
 
     void Start()
     {
+        // Find player camera from the instantiated player prefab
+        GameObject player = GameObject.FindWithTag("Player");
+        if (player != null)
+        {
+            Camera mainCam = player.GetComponentInChildren<Camera>();
+            if (mainCam != null)
+            {
+                playerCamera = mainCam.transform;
+            }
+            else
+            {
+                Debug.LogWarning("Main Camera not found in PlayerCharacter prefab.");
+            }
+        }
+        else
+        {
+            Debug.LogWarning("PlayerCharacter with tag 'Player' not found.");
+        }
+
+        // Find final waypoint from object with GameWinTrigger script
+        GameWinTrigger winTrigger = FindObjectOfType<GameWinTrigger>();
+        if (winTrigger != null)
+        {
+            finalWaypoint = winTrigger.transform;
+        }
+        else
+        {
+            Debug.LogWarning("GameWinTrigger not found in scene.");
+        }
+
+        // UI Setup
         canvas = waypointIcon.GetComponentInParent<Canvas>();
         canvasRect = canvas.GetComponent<RectTransform>();
 
@@ -26,23 +57,17 @@ public class WaypointToggleSystem : MonoBehaviour
 
     void Update()
     {
-        // Check for E key press
         if (Input.GetKeyDown(KeyCode.E))
         {
             isWaypointActive = !isWaypointActive;
             waypointIcon.gameObject.SetActive(isWaypointActive);
 
-            if (isWaypointActive)
-            {
-                toggleText.text = "Press [E] to turn off the waypoint";
-            }
-            else
-            {
-                toggleText.text = "Press [E] to turn on the waypoint";
-            }
+            toggleText.text = isWaypointActive
+                ? "Press [E] to turn off the waypoint"
+                : "Press [E] to turn on the waypoint";
         }
 
-        if (isWaypointActive)
+        if (isWaypointActive && playerCamera != null && finalWaypoint != null)
         {
             UpdateWaypointMarker();
         }
@@ -59,7 +84,6 @@ public class WaypointToggleSystem : MonoBehaviour
         }
 
         Vector2 screenPosition = new Vector2(screenPoint.x, screenPoint.y);
-
         float canvasWidth = canvas.pixelRect.width;
         float canvasHeight = canvas.pixelRect.height;
 
