@@ -109,7 +109,7 @@ public class Weapon : WeaponBehaviour
             audioSource = gameObject.AddComponent<AudioSource>();
         }
         audioSource.playOnAwake = false;
-        
+        audioSource.volume = 0.5f;
         // Auto-find muzzle if not assigned
         if (muzzle == null)
         {
