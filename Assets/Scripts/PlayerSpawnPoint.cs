@@ -2,15 +2,14 @@ using UnityEngine;
 
 public class PlayerSpawnPoint : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [Tooltip("Optional marker object to hide when the game starts.")]
+    public GameObject markerObject;
+
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (markerObject != null)
+        {
+            markerObject.SetActive(false);
+        }
     }
 }
