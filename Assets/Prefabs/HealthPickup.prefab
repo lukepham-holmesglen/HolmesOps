@@ -1,0 +1,107 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6551345969988082923
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: e6eab22dbc6675d40b4cd3f07d8b6222, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.2307425
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e6eab22dbc6675d40b4cd3f07d8b6222, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.12
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e6eab22dbc6675d40b4cd3f07d8b6222, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.3753624
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e6eab22dbc6675d40b4cd3f07d8b6222, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e6eab22dbc6675d40b4cd3f07d8b6222, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e6eab22dbc6675d40b4cd3f07d8b6222, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e6eab22dbc6675d40b4cd3f07d8b6222, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e6eab22dbc6675d40b4cd3f07d8b6222, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e6eab22dbc6675d40b4cd3f07d8b6222, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e6eab22dbc6675d40b4cd3f07d8b6222, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e6eab22dbc6675d40b4cd3f07d8b6222, type: 3}
+      propertyPath: m_Name
+      value: HealthPickup
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e6eab22dbc6675d40b4cd3f07d8b6222, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8443097532149020400}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e6eab22dbc6675d40b4cd3f07d8b6222, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3680905501349402940}
+  m_SourcePrefab: {fileID: 100100000, guid: e6eab22dbc6675d40b4cd3f07d8b6222, type: 3}
+--- !u!1 &6208888986495001018 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: e6eab22dbc6675d40b4cd3f07d8b6222, type: 3}
+  m_PrefabInstance: {fileID: 6551345969988082923}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &8443097532149020400
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6208888986495001018}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.13413976, y: 1.5514717, z: 1.551472}
+  m_Center: {x: 0, y: 0.00000011920929, z: -0.00000023841858}
+--- !u!114 &3680905501349402940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6208888986495001018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8893bf22a37bd546aebe9c5304d45c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthAmount: 25
+  destroyOnPickup: 1
+  pickupSound: {fileID: 8300000, guid: 6f7d47b06ead01a4f86a2f71a9dfc2d2, type: 3}
+  pickupVolume: 0.705

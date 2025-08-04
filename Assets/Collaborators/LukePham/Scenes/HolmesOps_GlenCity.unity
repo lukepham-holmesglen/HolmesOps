@@ -670,6 +670,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1600276459 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4759425441300929117, guid: f99bf596713ee844d99edeac2dc28ec0, type: 3}
+  m_PrefabInstance: {fileID: 208027620436133481}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1633534397 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1025181422985372525, guid: dd047869ebb53ee4b8c7a7957a6e2038, type: 3}
@@ -739,6 +750,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1092741841}
     m_Modifications:
+    - target: {fileID: 298341195177280644, guid: f99bf596713ee844d99edeac2dc28ec0, type: 3}
+      propertyPath: toggleText
+      value: 
+      objectReference: {fileID: 1600276459}
     - target: {fileID: 1418088655048964890, guid: f99bf596713ee844d99edeac2dc28ec0, type: 3}
       propertyPath: m_Name
       value: GameScreen
