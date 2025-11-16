@@ -35,6 +35,8 @@ public class Weapon : WeaponBehaviour
     private Animator animator;
     private int ammunitionCurrent;
     [SerializeField]
+    private int reserveAmmo;
+    [SerializeField]
     private Transform playerCamera;
 
     [Header("Muzzle Flash")]
@@ -85,6 +87,8 @@ public class Weapon : WeaponBehaviour
     public override RuntimeAnimatorController GetAnimatorController() => controller;
     public override float GetRateOfFire() => roundsPerMinute;
     public override bool HasAmmunition() => ammunitionCurrent > 0;
+    public override int CheckReserve() => reserveAmmo;
+    public override int GetReserveTotal() => magazineBehaviour.GetReserveTotal();
     public override bool IsAutomatic() => automatic;
     public override WeaponAttachmentManagerBehaviour GetAttachmentManager() => attachmentManager;
 
@@ -124,11 +128,11 @@ public class Weapon : WeaponBehaviour
         
         // Start with full ammunition
         ammunitionCurrent = magazineBehaviour.GetAmmunitionTotal();
-        
+        reserveAmmo = magazineBehaviour.GetReserveTotal();
         // Update UI to show correct ammo count
         if (GameMan.Instance != null && GameMan.Instance.gameUIInstance != null)
         {
-            GameMan.Instance.gameUIInstance.UpdateAmmoCount(ammunitionCurrent);
+            GameMan.Instance.gameUIInstance.UpdateAmmoCount(ammunitionCurrent, CheckReserve());
         }
         
         //Debug.Log($"Weapon started with {ammunitionCurrent}/{magazineBehaviour.GetAmmunitionTotal()} ammunition");
@@ -136,14 +140,19 @@ public class Weapon : WeaponBehaviour
     #endregion
 
     #region Functions
-    // Method to test casing ejection (for debugging)
-    [ContextMenu("Test Casing Ejection")]
-    public void TestCasingEjection()
+    public override void AmmoPickup(int amount)
     {
-        //Debug.Log("Testing casing ejection manually");
-        EjectCasing();
+        ////////////////////////////////////////////////////////////////////////////////////////
+        /// 
+        /// THIS IS WHERE YOU NEED TO PUT YOUR AMMO PICKUP FUNCTION.
+        /// YOU NEED TO UPDATE THE reserveAmmo VARIABLE, USE GetReserveTotal() TO
+        /// MAKE SURE YOU DON'T GO OVER THE LIMIT... MAKE SURE TO
+        /// HAVE THIS AS THE FINAL LINE OF YOUR FUNCTION IN ORDER TO UPDATE THE UI:
+        /// 
+        /// GameMan.Instance.gameUIInstance.UpdateAmmoCount(ammunitionCurrent, CheckReserve());
+        /// 
+        ////////////////////////////////////////////////////////////////////////////////////////
     }
-
     public override void EjectCasing()
     {
         // Spawn casing prefab at ejection port
@@ -169,8 +178,21 @@ public class Weapon : WeaponBehaviour
 
     public override void FillAmmunition(int amount)
     {
-        ammunitionCurrent = amount != 0 ? Mathf.Clamp(ammunitionCurrent + amount, 0, GetAmmunitionTotal()) : magazineBehaviour.GetAmmunitionTotal();
-        GameMan.Instance.gameUIInstance.UpdateAmmoCount(ammunitionCurrent);
+        int missingAmount = GetAmmunitionTotal() - ammunitionCurrent;
+        if(CheckReserve() >= missingAmount)
+        {
+            reserveAmmo -= missingAmount;
+            ammunitionCurrent = Mathf.Clamp(ammunitionCurrent + missingAmount, 0, GetAmmunitionTotal());
+        }
+        else
+        {
+            missingAmount = CheckReserve();
+            reserveAmmo -= missingAmount;
+            ammunitionCurrent = Mathf.Clamp(ammunitionCurrent + missingAmount, 0, GetAmmunitionTotal());
+        }
+
+        GameMan.Instance.gameUIInstance.UpdateAmmoCount(ammunitionCurrent, CheckReserve());
+        
     }
 
     public override void Fire(float spreadMultiplier = 1)
@@ -215,7 +237,7 @@ public class Weapon : WeaponBehaviour
 
     // Update ammunition and UI
     ammunitionCurrent = Mathf.Clamp(ammunitionCurrent - 1, 0, magazineBehaviour.GetAmmunitionTotal());
-    GameMan.Instance.gameUIInstance.UpdateAmmoCount(ammunitionCurrent);
+    GameMan.Instance.gameUIInstance.UpdateAmmoCount(ammunitionCurrent, CheckReserve());
 
     // Play firing animation
     animator.Play("Fire", 0, 0.0f);

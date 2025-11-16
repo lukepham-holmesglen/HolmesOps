@@ -266,11 +266,11 @@ MonoBehaviour:
   myAgent: {fileID: 690902487532633907}
   animator: {fileID: 7170704717967119121}
   roamingRange: 10
-  detectRange: 8
+  detectRange: 50
   attackRange: 2
   detectionDelay: 0.5
-  walkSpeed: 0.5
-  chaseSpeed: 1
+  walkSpeed: 1
+  chaseSpeed: 2
   useRandomPatrolling: 1
   patrolWaitTime: 2
   randomPatrolChance: 0.3

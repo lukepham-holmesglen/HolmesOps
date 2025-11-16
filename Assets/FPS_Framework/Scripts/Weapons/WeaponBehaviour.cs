@@ -32,6 +32,8 @@ public abstract class WeaponBehaviour : MonoBehaviour
     public abstract Animator GetAnimator();
     public abstract bool IsAutomatic();
     public abstract bool HasAmmunition();
+    public abstract int CheckReserve();
+    public abstract int GetReserveTotal();
     public abstract bool IsFull();
     public abstract float GetRateOfFire();
     public abstract RuntimeAnimatorController GetAnimatorController();
@@ -41,6 +43,7 @@ public abstract class WeaponBehaviour : MonoBehaviour
 
     public abstract void Fire(float spreadMultiplier = 1.0f);
     public abstract void Reload();
+    public abstract void AmmoPickup(int amount);
     public abstract void FillAmmunition(int amount);
     public abstract void EjectCasing();
     public abstract void SetOwner(CharacterBehaviour newOwner);
