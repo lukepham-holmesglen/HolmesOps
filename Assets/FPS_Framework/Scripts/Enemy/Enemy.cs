@@ -148,8 +148,22 @@ public class Enemy : EnemyBehaviour
                 animator.SetBool("Death", true);
             }
         }
+
+
+        ////////////////////////////////////////////////////////////////////////////////////
+        /// 
+        /// 
+        /// HERE IS WHERE YOU NEED TO HANDLE THE SPAWNING OF YOUR OBJECT
+        /// CREATE A VARIABLE UP TOP AS A REFERENCE TO YOUR PREFAB
+        /// RANDOMISE WHETHER OR NOT TO HAVE SOMETHING SPAWN WHEN AN ENEMY IS KILLED
+        /// I RECOMMEND 80% CHANCE FOR TESTING THEN 20-30% FOR SUBMISSION
+        /// 
+        /// 
+        ////////////////////////////////////////////////////////////////////////////////////
+
+
     }
-    
+
     private void NotifySpawnManagerOfDeath()
     {
         if (hasNotifiedSpawnManager) return;

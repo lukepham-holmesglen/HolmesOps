@@ -19082,6 +19082,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7226883063114250472}
+  - component: {fileID: 7318970358109328500}
   m_Layer: 0
   m_Name: FrangaDungeon
   m_TagString: Untagged
@@ -19109,6 +19110,19 @@ Transform:
   - {fileID: 986662266986553439}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7318970358109328500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2024678720776468095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c81bae0f85ef14a448aeabb74c21bcef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: a6952f8bf7bba694d901008da7937455, type: 2}
 --- !u!1 &2042037330752748098
 GameObject:
   m_ObjectHideFlags: 0
