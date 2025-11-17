@@ -24,6 +24,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private AudioClip audioClipLand;
 
+    [Tooltip("The audio clip that is played when the player collects a powerup.")]
+    public AudioClip audioClipPowerup;
     #endregion
 
     #region Variables
@@ -43,7 +45,7 @@ public class PlayerMovement : MonoBehaviour
     private float speedWalking = 5.0f;
     [SerializeField]
     private float speedRunning = 9.0f;
-    
+    public float speedMultiplier = 1;
     [Header("Jump Settings")]
     [SerializeField]
     private float jumpForce = 8.0f;
@@ -154,7 +156,8 @@ public class PlayerMovement : MonoBehaviour
             movement *= speedRunning;
         else
             movement *= speedWalking;
-
+        //Multiply speed by multiplier set by powerup. speedMultiplier should be 1 when powerup is not active so will not have any effect
+        movement *= speedMultiplier;
         //convert to world space to apply as velocity
         movement = transform.TransformDirection(movement);
 

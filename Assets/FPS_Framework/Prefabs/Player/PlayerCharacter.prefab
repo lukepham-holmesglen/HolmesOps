@@ -4388,6 +4388,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 200
   currentHealth: 200
+  equippedWeapon: {fileID: 0}
   inventory: {fileID: 7838821718149972444}
   characterAnimator: {fileID: 1585219838117828459}
   dampTimeLocomotion: 0.15
@@ -4414,9 +4415,11 @@ MonoBehaviour:
   audioClipRunning: {fileID: 8300000, guid: d2add02f58e61e640aba3ae9110591cb, type: 3}
   audioClipJump: {fileID: 8300000, guid: f6185b66ef9921645b8d4458f6700ce8, type: 3}
   audioClipLand: {fileID: 8300000, guid: 9c0e236d24c1ea74584593e3a61ba427, type: 3}
+  audioClipPowerup: {fileID: 8300000, guid: d9db3938f27a7ca44b6e0c7accf9ad39, type: 3}
   playerCharacter: {fileID: 7496890156330050417}
   speedWalking: 5
   speedRunning: 12
+  speedMultiplier: 1
   jumpForce: 6
   gravityMultiplier: 4
   groundCheckDistance: 0.1

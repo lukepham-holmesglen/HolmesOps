@@ -25,7 +25,10 @@ public class Enemy : EnemyBehaviour
     private bool hasNotifiedSpawnManager = false; // Prevent double notification
     private Collider[] allColliders;
     private int impactLayerIndex = -1;
-    
+    [SerializeField]
+    GameObject powerupPrefab;
+    [SerializeField, Range(0, 1)]
+    float spawnChance = 0.2f;
     // Animation parameter hash for performance
     private static readonly int HashImpactTrigger = Animator.StringToHash("Impact");
 
@@ -150,17 +153,13 @@ public class Enemy : EnemyBehaviour
         }
 
 
-        ////////////////////////////////////////////////////////////////////////////////////
-        /// 
-        /// 
-        /// HERE IS WHERE YOU NEED TO HANDLE THE SPAWNING OF YOUR OBJECT
-        /// CREATE A VARIABLE UP TOP AS A REFERENCE TO YOUR PREFAB
-        /// RANDOMISE WHETHER OR NOT TO HAVE SOMETHING SPAWN WHEN AN ENEMY IS KILLED
-        /// I RECOMMEND 80% CHANCE FOR TESTING THEN 20-30% FOR SUBMISSION
-        /// 
-        /// 
-        ////////////////////////////////////////////////////////////////////////////////////
-
+        
+        //Get a random number against spawn chance to see if powerup should be spawned
+        if (Random.Range(0f, 1f) < spawnChance)
+        {
+            //Spawn powerup where the enemy died
+            Instantiate(powerupPrefab, transform.position, Quaternion.identity);
+        }
 
     }
 
