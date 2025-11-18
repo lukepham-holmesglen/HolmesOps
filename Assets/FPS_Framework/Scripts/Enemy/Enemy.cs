@@ -25,6 +25,7 @@ public class Enemy : EnemyBehaviour
     private bool hasNotifiedSpawnManager = false; // Prevent double notification
     private Collider[] allColliders;
     private int impactLayerIndex = -1;
+    public GameObject healthPack;
     
     // Animation parameter hash for performance
     private static readonly int HashImpactTrigger = Animator.StringToHash("Impact");
@@ -149,7 +150,16 @@ public class Enemy : EnemyBehaviour
             }
         }
 
+        float percentChance = Random.Range(0.0f, 100.0f);
+        if(percentChance <= 80.0f) //80% chance to drop healthpack
+        {
+            Instantiate(healthPack, transform.position, Quaternion.identity);
 
+        }
+        if (percentChance <= 20.0f) //20% chance to drop healthpack
+        {
+
+        }
         ////////////////////////////////////////////////////////////////////////////////////
         /// 
         /// 

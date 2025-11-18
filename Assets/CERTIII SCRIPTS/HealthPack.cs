@@ -1,7 +1,9 @@
+using System.Data;
 using UnityEngine;
 
 public class HealthPack : MonoBehaviour
 {
+    public int healAmount = 50;
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     /// 
     /// Variable for the amount of health to add
@@ -16,12 +18,22 @@ public class HealthPack : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            other.gameObject.GetComponent<Character>().ChangeCurrentHealth(healAmount);
+            {
+                Destroy(gameObject);
+            }
+        }
     }
 }
