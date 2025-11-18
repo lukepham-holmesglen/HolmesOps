@@ -356,6 +356,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ammunitionTotal: 30
+  reserveAmmoTotal: 150
 --- !u!1 &860465178442914150
 GameObject:
   m_ObjectHideFlags: 0
@@ -469,6 +470,7 @@ MonoBehaviour:
   projectileImpulse: 400
   magazineBehaviour: {fileID: 785157276180582739}
   weaponSprite: {fileID: 21300000, guid: 4014571d0ea03fc4dbe902f401238174, type: 3}
+  reserveAmmo: 0
   playerCamera: {fileID: 235876697308727728}
   muzzle: {fileID: 1618319820378965737}
   socketEjection: {fileID: 7205781779929624745}
@@ -749,6 +751,7 @@ MonoBehaviour:
   projectileImpulse: 400
   magazineBehaviour: {fileID: 6702889911897469611}
   weaponSprite: {fileID: 21300000, guid: 91fd2afee6b90414aa3e52d9f799fa55, type: 3}
+  reserveAmmo: 0
   playerCamera: {fileID: 235876697308727728}
   muzzle: {fileID: 1732488380229477198}
   socketEjection: {fileID: 8213104873772857882}
@@ -3585,6 +3588,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ammunitionTotal: 12
+  reserveAmmoTotal: 60
 --- !u!1 &7733956376680787763
 GameObject:
   m_ObjectHideFlags: 0

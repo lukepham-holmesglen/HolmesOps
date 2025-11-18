@@ -58,9 +58,10 @@ public class GameScreen : UiView
         maximumAmmo.text = maxAmmo.ToString();
     }
 
-    public void UpdateAmmoCount(int newAmount)
+    public void UpdateAmmoCount(int newAmount, int maxAmmo)
     {
         currentAmmo.text = newAmount.ToString();
+        maximumAmmo.text = maxAmmo.ToString();
     }
 
     public void IncreaseScore(int amount)
