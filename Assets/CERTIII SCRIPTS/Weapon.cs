@@ -146,7 +146,7 @@ public class Weapon : WeaponBehaviour
         /// 
         /// THIS IS WHERE YOU NEED TO PUT YOUR AMMO PICKUP FUNCTION.
         /// YOU NEED TO UPDATE THE reserveAmmo VARIABLE, USE GetReserveTotal() TO
-        /// MAKE SURE YOU DON'T GO OVER THE LIMIT... MAKE SURE TO
+        /// MAKE SURE YOU DON'T GO OVER THE LIMIT... MAKE SURE TO mjgjygjhytjhyt
         /// HAVE THIS AS THE FINAL LINE OF YOUR FUNCTION IN ORDER TO UPDATE THE UI:
         /// 
         /// GameMan.Instance.gameUIInstance.UpdateAmmoCount(ammunitionCurrent, CheckReserve());
@@ -160,6 +160,7 @@ public class Weapon : WeaponBehaviour
         {
          //   //Debug.Log("Ejecting casing");
             GameObject casing = Instantiate(prefabCasing, socketEjection.position, socketEjection.rotation);
+            //jhfnhgf
             
             // Make sure the casing has the CasingScript component
             if (casing.GetComponent<CasingScript>() == null)
