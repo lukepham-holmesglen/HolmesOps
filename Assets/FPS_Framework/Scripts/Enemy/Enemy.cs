@@ -1,7 +1,11 @@
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class Enemy : EnemyBehaviour
 {
+    //Adding variable for healthpack - J.Ryan
+    public GameObject healthpack_prefab;
+
     private SpawnManager spawnMan;
     [SerializeField] private AIStateMachine aiState;
     [SerializeField] private Animator animator;
@@ -147,6 +151,17 @@ public class Enemy : EnemyBehaviour
             {
                 animator.SetBool("Death", true);
             }
+
+            //J.Ryan When enemy dies, chance of healthpack spawning
+            // *Bug Found* even at 100%, healthpack_prefab
+
+            float dropChance = Random.Range(0.0f, 100.0f);
+            if (dropChance < 100.0f)
+            {
+                Vector3 correctedPostion = gameObject.transform.position;
+                Instantiate(healthpack_prefab, correctedPostion, Quaternion.identity);
+
+            }
         }
 
 
@@ -161,8 +176,11 @@ public class Enemy : EnemyBehaviour
         /// 
         ////////////////////////////////////////////////////////////////////////////////////
 
+        
+        
 
-    }
+
+}
 
     private void NotifySpawnManagerOfDeath()
     {

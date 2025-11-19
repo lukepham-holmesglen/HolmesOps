@@ -188,6 +188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b0c4ed6b9c8cdd4b9c463ab2ace3ba6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthpack_prefab: {fileID: 8879985883683118503, guid: 141f9083fdb5eb742b61e8dd2f272c6d, type: 3}
   aiState: {fileID: 7665463184670261277}
   animator: {fileID: 2307198271415958463}
   ragdollController: {fileID: 5036459351860639615}
@@ -197,6 +198,7 @@ MonoBehaviour:
   impactAnimationName: Impact
   impactAnimationBlendTime: 0.1
   impactLayerName: Upper Body
+  deathCleanupDelay: 3
 --- !u!114 &5036459351860639615
 MonoBehaviour:
   m_ObjectHideFlags: 0
