@@ -15,6 +15,7 @@ public class HealthPack : MonoBehaviour
     // *BUG FOUND* I wanted to make this volume lower at 0.6f' and VS kept giving me the 'lightbulb'
     // For whatever reason, it disappeared after swapping to other scripts?!?!?!?
     private float pickupVolume = 0.6f;
+   
 
 
 
@@ -41,15 +42,15 @@ public class HealthPack : MonoBehaviour
     }
 
     //J.Ryan -
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
         if(collision.gameObject.CompareTag("Player"))
         {
             
                 //When saving, the "collider.gameObject.GetComponent<Character>().ChangeCurrentHealth(yourAmount);" 
                 // was updated to this
-            GetComponent<Collider>().gameObject.GetComponent<Character>().ChangeCurrentHealth(healthAmount);
-            
+            collision.gameObject.GetComponent<Character>().ChangeCurrentHealth(healthAmount);
+            AudioClipLoadType(pickupSound).Play();
             Destroy(gameObject);
         }
 

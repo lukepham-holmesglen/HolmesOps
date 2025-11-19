@@ -152,18 +152,18 @@ public class Enemy : EnemyBehaviour
                 animator.SetBool("Death", true);
             }
 
-            //J.Ryan When enemy dies, chance of healthpack spawning
-            // *Bug Found* even at 100%, healthpack_prefab
-
-            float dropChance = Random.Range(0.0f, 100.0f);
-            if (dropChance < 100.0f)
-            {
-                Vector3 correctedPostion = gameObject.transform.position;
-                Instantiate(healthpack_prefab, correctedPostion, Quaternion.identity);
-
-            }
         }
 
+        //J.Ryan When enemy dies, chance of healthpack spawning
+        // *Bug Found* even at 100%, healthpack_prefab
+
+        float dropChance = Random.Range(0.0f, 100.0f);
+        if (dropChance < 100.0f)
+        {
+            Vector3 correctedPostion = gameObject.transform.position;
+            Instantiate(healthpack_prefab, correctedPostion, Quaternion.identity);
+
+        }
 
         ////////////////////////////////////////////////////////////////////////////////////
         /// 
@@ -176,11 +176,11 @@ public class Enemy : EnemyBehaviour
         /// 
         ////////////////////////////////////////////////////////////////////////////////////
 
-        
-        
 
 
-}
+
+
+    }
 
     private void NotifySpawnManagerOfDeath()
     {
