@@ -1,3 +1,4 @@
+using System.Data;
 using UnityEngine;
 
 public class Enemy : EnemyBehaviour
@@ -151,14 +152,14 @@ public class Enemy : EnemyBehaviour
         }
 
         float percentChance = Random.Range(0.0f, 100.0f);
-        if(percentChance <= 80.0f) //80% chance to drop healthpack
+        if(percentChance <= 30.0f) //30% chance to drop healthpack
         {
             Instantiate(healthPack, transform.position, Quaternion.identity);
 
         }
-        if (percentChance <= 20.0f) //20% chance to drop healthpack
+        if (percentChance <= 70.0f) //70% chance to not drop healthpack
         {
-
+            Destroy(healthPack);
         }
         ////////////////////////////////////////////////////////////////////////////////////
         /// 

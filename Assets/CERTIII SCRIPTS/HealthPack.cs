@@ -26,6 +26,8 @@ public class HealthPack : MonoBehaviour
     {
 
     }
+
+    //Trigger command so that when you walk into healthpack prefab, it gets C O N S U M E D
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
