@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1097350648536010572}
   - component: {fileID: 1563549987440035954}
   - component: {fileID: 3358526491431107196}
+  - component: {fileID: 7128795093950317072}
   m_Layer: 5
   m_Name: GameOverScreen
   m_TagString: Untagged
@@ -94,6 +95,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentRound: {fileID: 1002240044908546066}
   currentScore: {fileID: 9086826708644399189}
+  highScores: {fileID: 0}
+--- !u!114 &7128795093950317072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1068056183885261251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cac515f32ac0fa41ad089d15fbb0347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  topScores: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 --- !u!1 &3062397928739394395
 GameObject:
   m_ObjectHideFlags: 0

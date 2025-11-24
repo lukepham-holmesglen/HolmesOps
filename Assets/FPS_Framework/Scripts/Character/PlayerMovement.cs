@@ -151,9 +151,9 @@ public class PlayerMovement : MonoBehaviour
 
         //calc speed
         if (playerCharacter.IsRunning())
-            movement *= speedRunning;
+            movement *= speedRunning * 2.0f;
         else
-            movement *= speedWalking;
+            movement *= speedWalking * 2.0f;
 
         //convert to world space to apply as velocity
         movement = transform.TransformDirection(movement);
