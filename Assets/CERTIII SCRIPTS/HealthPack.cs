@@ -27,7 +27,8 @@ public class HealthPack : MonoBehaviour
 
     }
 
-    //Trigger command so that when you walk into healthpack prefab, it gets C O N S U M E D
+    //Trigger command so that when you walk into healthpack prefab, it gets C O N S U M E D.
+    //The script was taken from Google and changed to work with the other scripts.
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))

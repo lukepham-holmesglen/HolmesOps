@@ -8,6 +8,8 @@ public class GameOverScreen : UiView
     public TMP_Text currentRound;
     public TMP_Text currentScore;
 
+    public Highscore highScores;
+
     public override void Show()
     {
         base.Show();
@@ -24,6 +26,8 @@ public class GameOverScreen : UiView
     {
         currentRound.text = "Made it to round: " + round.ToString();
         currentScore.text = "Final Score: " + score.ToString();
+
+        highScores.AddScore(score);
     }
 
     public void NextButton()
