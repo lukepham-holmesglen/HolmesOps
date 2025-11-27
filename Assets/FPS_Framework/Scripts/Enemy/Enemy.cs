@@ -157,10 +157,9 @@ public class Enemy : EnemyBehaviour
             Instantiate(healthPack, transform.position, Quaternion.identity);
 
         }
-        if (percentChance <= 70.0f) //70% chance to not drop healthpack
-        {
-            Destroy(healthPack);
-        }
+        //Because there is only a 30% chance for the health pack to spawn,
+        //there is no need to add a script line on the other 70% of not spawning.
+
         ////////////////////////////////////////////////////////////////////////////////////
         /// 
         /// 
@@ -171,8 +170,6 @@ public class Enemy : EnemyBehaviour
         /// 
         /// 
         ////////////////////////////////////////////////////////////////////////////////////
-
-
     }
 
     private void NotifySpawnManagerOfDeath()
