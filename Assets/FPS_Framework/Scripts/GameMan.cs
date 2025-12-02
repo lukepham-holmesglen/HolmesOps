@@ -115,7 +115,7 @@ public class GameMan : MonoBehaviour
 
         UiSystem.Show<GameOverScreen>();
         UiSystem.GetView<GameOverScreen>().SetData(gameUIInstance.currentRound, gameUIInstance.currentScore);
-
+        Debug.Log("Game over!");
         spawnManInstance.GameOver();
 
         Cursor.visible = true;

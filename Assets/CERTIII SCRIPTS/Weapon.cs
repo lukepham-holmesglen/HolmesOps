@@ -142,6 +142,21 @@ public class Weapon : WeaponBehaviour
     #region Functions
     public override void AmmoPickup(int amount)
     {
+        ammunitionCurrent += amount;
+        if (reserveAmmo > GetReserveTotal()) 
+        {
+            reserveAmmo = GetReserveTotal();
+        }
+        GameMan.Instance.gameUIInstance.UpdateAmmoCount(ammunitionCurrent, reserveAmmo);
+
+        // in Weapon class override the AmmoPickup method with amountAmmo argumet
+        // add amount to the reserveAmmo
+        // check reserveAmmo not bigger then GetReserveTotal() - as mean maxAmmoAmount
+        //if does - reserveAmmo = maxAmmoAmount
+        // Update UI via GameManager.UiInstance.UpdateUI(currentAmmo, reserveAmmo)
+
+
+
         ////////////////////////////////////////////////////////////////////////////////////////
         /// 
         /// THIS IS WHERE YOU NEED TO PUT YOUR AMMO PICKUP FUNCTION.
@@ -153,6 +168,8 @@ public class Weapon : WeaponBehaviour
         /// 
         ////////////////////////////////////////////////////////////////////////////////////////
     }
+
+
     public override void EjectCasing()
     {
         // Spawn casing prefab at ejection port

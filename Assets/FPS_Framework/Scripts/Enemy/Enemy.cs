@@ -1,12 +1,17 @@
+using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Enemy : EnemyBehaviour
 {
+    private const float DropChance = 0.8f;
+
     private SpawnManager spawnMan;
     [SerializeField] private AIStateMachine aiState;
     [SerializeField] private Animator animator;
     [SerializeField] private RagdollController ragdollController;
-    
+    [SerializeField] private GameObject dropPrefab;
+
     [Header("Collision Settings")]
     [SerializeField] private bool disableCollisionOnDeath = true;
     [SerializeField] private float collisionDisableDelay = 0.1f;
@@ -148,6 +153,17 @@ public class Enemy : EnemyBehaviour
                 animator.SetBool("Death", true);
             }
         }
+
+        float chance = Random.Range(0.0f, 1.0f);
+        if (chance <= DropChance)
+        {
+            Instantiate<GameObject>(dropPrefab, transform.position, Quaternion.identity);
+        }
+            
+            // when enemy dies:
+            // calculate chance from 0 to 1
+
+            // check if chace in the range(under 80 %) -Spawn ammoPrefab in enemyPosition
 
 
         ////////////////////////////////////////////////////////////////////////////////////

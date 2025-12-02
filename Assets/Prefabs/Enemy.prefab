@@ -191,12 +191,14 @@ MonoBehaviour:
   aiState: {fileID: 7665463184670261277}
   animator: {fileID: 2307198271415958463}
   ragdollController: {fileID: 5036459351860639615}
+  dropPrefab: {fileID: 6588876458670192389, guid: a9bcb51d40612044398bac54d7ae3b74, type: 3}
   disableCollisionOnDeath: 1
   collisionDisableDelay: 0.1
   useImpactAnimations: 1
   impactAnimationName: Impact
   impactAnimationBlendTime: 0.1
   impactLayerName: Upper Body
+  deathCleanupDelay: 3
 --- !u!114 &5036459351860639615
 MonoBehaviour:
   m_ObjectHideFlags: 0

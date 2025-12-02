@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class AmmoPack : MonoBehaviour
 {
+    [SerializeField] private int amountAmmo= 30;
+
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     /// 
     /// Variable for the amount of ammo to add
@@ -13,15 +15,17 @@ public class AmmoPack : MonoBehaviour
     /// 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void OnTriggerEnter(Collider col)
     {
-        
+        if (col.CompareTag("Player"))
+        {
+            col.GetComponent<Character>().equippedWeapon.AmmoPickup(amountAmmo);
+            Destroy(gameObject);
+            
+        }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    //in AmmoPack.cs add serialezedField amount of ammo
+    // add OnTriggerEnter method for check when collide with Player via tag comparisson
+    //if true - Get Character componentm after weapon class and fire the AmmoPickup method wtih "amountAmmo" argument
+    //Destroy this object
 }
