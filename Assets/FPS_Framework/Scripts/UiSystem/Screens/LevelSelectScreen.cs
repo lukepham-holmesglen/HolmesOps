@@ -20,14 +20,10 @@ public class LevelSelectScreen : UiView
 
     public void SelectedLevel(GameObject levelPrefab)
     {
-        var lightingProfile = levelPrefab.GetComponent<LevelLightingProfile>();
-
+        // Start fade sequence on separate controller
         FadeController.Instance.FadeToWhiteThen(levelPrefab, () =>
         {
-            // Apply lighting before showing the game
-            if (lightingProfile != null)
-                EnvironmentManager.Instance.ApplyLightingProfile(lightingProfile.profile);
-
+            // Load level and show game screen after fade-in completes
             GameMan.Instance.StartGame(levelPrefab);
             UiSystem.Show<GameScreen>();
         });

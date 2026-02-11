@@ -23,7 +23,7 @@ public sealed class Character : CharacterBehaviour
 	private bool holdingButtonRun;
 	private bool holdingButtonFire;
 
-	public WeaponBehaviour equippedWeapon;
+	private WeaponBehaviour equippedWeapon;
 	private WeaponAttachmentManagerBehaviour weaponAttachmentManager;
 	private MagazineBehaviour equippedWeaponMagazine;
 	[Tooltip("Inventory.")]
@@ -349,7 +349,7 @@ public sealed class Character : CharacterBehaviour
 	private IEnumerator ChangeWeaponUI()
     {
 		yield return new WaitForEndOfFrame();
-		GameMan.Instance.gameUIInstance.ChangeWeapon(equippedWeapon.GetWeaponSprite(), equippedWeapon.GetAmmunitionCurrent(), equippedWeapon.CheckReserve());
+		GameMan.Instance.gameUIInstance.ChangeWeapon(equippedWeapon.GetWeaponSprite(), equippedWeapon.GetAmmunitionCurrent(), equippedWeapon.GetAmmunitionTotal());
 	}
 
 	private void SetHolstered(bool value = true)

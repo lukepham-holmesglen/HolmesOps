@@ -20,11 +20,11 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.10030261, g: 0.21016614, b: 0.4339623, a: 1}
-  m_AmbientEquatorColor: {r: 0.16909933, g: 0.2940548, b: 0.3773585, a: 1}
-  m_AmbientGroundColor: {r: 0.5660378, g: 0.4120684, b: 0.104129605, a: 1}
+  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
+  m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 0.86
-  m_AmbientMode: 1
+  m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
   m_HaloStrength: 0.5
@@ -742,9 +742,6 @@ MonoBehaviour:
   playerInstance: {fileID: 0}
   spawnManInstance: {fileID: 754750245}
   gameUIInstance: {fileID: 1084003653}
-  musicSource: {fileID: 0}
-  menuMusic: {fileID: 0}
-  gameMusic: {fileID: 0}
 --- !u!1001 &208027620436133481
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1133,58 +1130,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1454818980512051742, guid: 491411d476d294b49b6bb8e13a4f09d5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2154082507164512804, guid: 491411d476d294b49b6bb8e13a4f09d5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2678559871302790950, guid: 491411d476d294b49b6bb8e13a4f09d5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2955065922297687942, guid: 491411d476d294b49b6bb8e13a4f09d5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3296641430126047859, guid: 491411d476d294b49b6bb8e13a4f09d5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3349993195084868019, guid: 491411d476d294b49b6bb8e13a4f09d5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3979255992142142686, guid: 491411d476d294b49b6bb8e13a4f09d5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4205907810483863603, guid: 491411d476d294b49b6bb8e13a4f09d5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4945548795212909161, guid: 491411d476d294b49b6bb8e13a4f09d5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5117429564605548016, guid: 491411d476d294b49b6bb8e13a4f09d5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5159085093153539999, guid: 491411d476d294b49b6bb8e13a4f09d5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6484551535088983825, guid: 491411d476d294b49b6bb8e13a4f09d5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7075759463737259083, guid: 491411d476d294b49b6bb8e13a4f09d5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.2
-      objectReference: {fileID: 0}
     - target: {fileID: 7814685096769535691, guid: 491411d476d294b49b6bb8e13a4f09d5, type: 3}
       propertyPath: m_Name
       value: GlenCity
@@ -1228,14 +1173,6 @@ PrefabInstance:
     - target: {fileID: 8126715514679380854, guid: 491411d476d294b49b6bb8e13a4f09d5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8173076159770792901, guid: 491411d476d294b49b6bb8e13a4f09d5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8564490308460708942, guid: 491411d476d294b49b6bb8e13a4f09d5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
