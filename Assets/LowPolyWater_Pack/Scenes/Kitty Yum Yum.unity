@@ -112369,7 +112369,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 702ea1f147799c142b5f114ac0097a51, type: 3}
+  m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 702ea1f147799c142b5f114ac0097a51, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.6
@@ -516239,6 +516239,9 @@ MonoBehaviour:
   playerInstance: {fileID: 0}
   spawnManInstance: {fileID: 754750245}
   gameUIInstance: {fileID: 1084003653}
+  musicSource: {fileID: 0}
+  menuMusic: {fileID: 0}
+  gameMusic: {fileID: 0}
 --- !u!1 &2100204673 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b6d29a149e4922341b4a7ff62019e289, type: 3}
