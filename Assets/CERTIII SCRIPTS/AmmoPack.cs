@@ -13,6 +13,12 @@ public class AmmoPack : MonoBehaviour
     /// 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+    [Tooltip("The amount of ammo to pickup")]
+    public int addAmmo = 100;
+
+
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -24,4 +30,15 @@ public class AmmoPack : MonoBehaviour
     {
         
     }
+
+     private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.CompareTag("Player"))
+        {
+            other.gameObject.GetComponent<Character>().equippedWeapon.AmmoPickup(addAmmo);
+            Destroy(gameObject);
+        }
+    }
+
+
 }

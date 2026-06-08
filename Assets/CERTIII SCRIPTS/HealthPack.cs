@@ -13,6 +13,11 @@ public class HealthPack : MonoBehaviour
     /// 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+
+    [Tooltip("The amount of health pickup gives")]
+    public int addHealth = 100;
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -24,4 +29,16 @@ public class HealthPack : MonoBehaviour
     {
         
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            GetComponent<Collider>().gameObject.GetComponent<Character>().ChangeCurrentHealth(addHealth);
+            Destroy(gameObject);
+        }
+    }   
+
+
+
 }

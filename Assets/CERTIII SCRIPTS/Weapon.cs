@@ -142,6 +142,10 @@ public class Weapon : WeaponBehaviour
     #region Functions
     public override void AmmoPickup(int amount)
     {
+
+        
+        GameMan.Instance.gameUIInstance.UpdateAmmoCount(ammunitionCurrent, CheckReserve());
+
         ////////////////////////////////////////////////////////////////////////////////////////
         /// 
         /// THIS IS WHERE YOU NEED TO PUT YOUR AMMO PICKUP FUNCTION.
