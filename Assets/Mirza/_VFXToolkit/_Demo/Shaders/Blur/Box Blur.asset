@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78b2425a2284af743826c689403a4924, type: 3}
+  m_Name: Box Blur
+  m_EditorClassIdentifier: AmplifyShaderEditor::AmplifyShaderEditor.AmplifyShaderFunction
+  m_functionInfo: "// Made with Amplify Shader Editor v1.9.9.8\n// Available at the
+    Unity Asset Store - http://u3d.as/y3X \n/*ASEBEGIN\nVersion=19908\nNode;AmplifyShaderEditor.FunctionInput,
+    AmplifyShaderEditor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null;2;-768,0;Inherit;False;Texture;15;0;False;1;0;OBJECT;0;False;1;OBJECT;0\nNode;AmplifyShaderEditor.TexelSizeNode,
+    AmplifyShaderEditor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null;5;-768,256;Inherit;False;-1;Create;1;0;OBJECT;;False;5;FLOAT4;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4\nNode;AmplifyShaderEditor.DynamicAppendNode,
+    AmplifyShaderEditor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null;7;-512,256;Inherit;False;FLOAT2;4;0;FLOAT;0;False;1;FLOAT;0;False;2;FLOAT;0;False;3;FLOAT;0;False;1;FLOAT2;0\nNode;AmplifyShaderEditor.SamplerStateNode,
+    AmplifyShaderEditor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null;8;-768,432;Inherit;False;1;1;1;1;-1;None;1;0;SAMPLER2D;;False;1;SAMPLERSTATE;0\nNode;AmplifyShaderEditor.FunctionInput,
+    AmplifyShaderEditor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null;9;-768,592;Inherit;False;Radius;2;4;False;1;0;FLOAT2;0,0;False;1;FLOAT2;0\nNode;AmplifyShaderEditor.FunctionInput,
+    AmplifyShaderEditor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null;3;-768,80;Inherit;False;UV;2;1;False;1;0;FLOAT2;0,0;False;1;FLOAT2;0\nNode;AmplifyShaderEditor.FunctionInput,
+    AmplifyShaderEditor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null;10;-768,176;Inherit;False;Texel
+    Size;2;2;False;1;0;FLOAT2;1,1;False;1;FLOAT2;0\nNode;AmplifyShaderEditor.FunctionInput,
+    AmplifyShaderEditor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null;4;-768,512;Inherit;False;Quality;0;3;False;1;0;INT;8;False;1;INT;0\nNode;AmplifyShaderEditor.FunctionInput,
+    AmplifyShaderEditor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null;13;-768,672;Inherit;False;Clip;0;5;False;1;0;INT;0;False;1;INT;0\nNode;AmplifyShaderEditor.FunctionInput,
+    AmplifyShaderEditor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null;14;-768,752;Inherit;False;Radial;0;6;False;1;0;INT;0;False;1;INT;0\nNode;AmplifyShaderEditor.SimpleDivideOpNode,
+    AmplifyShaderEditor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null;11;-256,384;Inherit;False;2;0;FLOAT;0;False;1;FLOAT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.DynamicAppendNode,
+    AmplifyShaderEditor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null;12;0,384;Inherit;False;FLOAT2;4;0;FLOAT;1;False;1;FLOAT;1;False;2;FLOAT;0;False;3;FLOAT;0;False;1;FLOAT2;0\nNode;AmplifyShaderEditor.CustomExpressionNode,
+    AmplifyShaderEditor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null;1;-256,0;Inherit;False;
+    ;8;File;9;True;tex;OBJECT;;In;Texture2D;Inherit;False;True;uv;FLOAT2;0,0;In;;Inherit;False;True;texelSize;FLOAT2;0,0;In;;Inherit;False;True;samplerState;SAMPLERSTATE;;In;;Inherit;False;True;quality;INT;0;In;;Inherit;False;True;radius;FLOAT2;0,0;In;;Inherit;False;True;clip;FLOAT;0;In;;Inherit;False;True;radial;FLOAT;0;In;;Inherit;False;True;output;FLOAT4;0,0,0,0;Out;;Inherit;False;BoxBlur_float;False;False;0;e1cef759db2f35f4982fbc961ae6fb84;False;10;0;FLOAT;0;False;1;OBJECT;;False;2;FLOAT2;0,0;False;3;FLOAT2;0,0;False;4;SAMPLERSTATE;;False;5;INT;0;False;6;FLOAT2;0,0;False;7;FLOAT;0;False;8;FLOAT;0;False;9;FLOAT4;0,0,0,0;False;2;FLOAT;0;FLOAT4;10\nNode;AmplifyShaderEditor.FunctionOutput,
+    AmplifyShaderEditor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null;0;0,0;Inherit;False;True;-1;Output;0;False;1;0;FLOAT4;0,0,0,0;False;1;FLOAT4;0\nWireConnection;5;0;2;0\nWireConnection;7;0;5;1\nWireConnection;7;1;5;2\nWireConnection;11;0;5;4\nWireConnection;11;1;5;3\nWireConnection;12;0;11;0\nWireConnection;1;1;2;0\nWireConnection;1;2;3;0\nWireConnection;1;3;12;0\nWireConnection;1;4;8;0\nWireConnection;1;5;4;0\nWireConnection;1;6;9;0\nWireConnection;1;7;13;0\nWireConnection;1;8;14;0\nWireConnection;0;0;1;10\nASEEND*/\n//CHKSM=1972561E0C6B2C3FD45D76407B0958E2DD38EB85"
+  m_functionName: 
+  m_description: 
+  m_additionalIncludes:
+    m_additionalIncludes: []
+    m_outsideIncludes: []
+  m_additionalPragmas:
+    m_additionalPragmas: []
+    m_outsidePragmas: []
+  m_additionalDirectives:
+    m_validData: 0
+    m_isDirty: 0
+    m_moduleName: ' Additional Directives'
+    m_independentModule: 1
+    m_customEdited: 0
+    m_additionalDirectives: []
+    m_shaderFunctionDirectives: []
+    m_nativeDirectives: []
+    m_nativeDirectivesIndex: -1
+    m_nativeDirectivesFoldout: 0
+    m_directivesSaveItems: []
+  m_nodeCategory: 3
+  m_headerStyle: 0
+  m_headerColor: {r: 1, g: 0.4, b: 0, a: 1}
+  m_customNodeCategory: 
+  m_previewPosition: 0
+  m_hidden: 0
+  m_url: 
