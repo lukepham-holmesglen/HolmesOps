@@ -31,7 +31,7 @@ Material:
   stringTagMap: {}
   disabledShaderPasses:
   - MOTIONVECTORS
-  m_LockedProperties: 
+  m_LockedProperties: _Blur_Texture_Remap_Max
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -171,7 +171,7 @@ Material:
     - _Enable_Scattering: 1
     - _Enable_Self_Shadow: 1
     - _Enable_Self_Shadow_Curves: 1
-    - _Enable_Shadow_Colour: 1
+    - _Enable_Shadow_Colour: 0
     - _EnvironmentReflections: 1
     - _GlossMapScale: 0
     - _Glossiness: 0
