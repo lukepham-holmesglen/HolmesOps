@@ -8,8 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Wall_Brick_Stone_Mat
-  m_Shader: {fileID: -6465566751694194690, guid: 3c128416ae485854d857ecd328e8e200,
-    type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 3c128416ae485854d857ecd328e8e200, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
@@ -18,7 +17,7 @@ Material:
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 2450
   stringTagMap:
     RenderType: TransparentCutout
   disabledShaderPasses:
@@ -75,11 +74,11 @@ Material:
     - _Cull: 2
     - _DstBlend: 0
     - _Metallic: 0
-    - _NormalStr: 1
+    - _NormalStr: 2
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Roughness: 1.25
+    - _Roughness: 1.21
     - _SrcBlend: 1
     - _Surface: 0
     - _WorkflowMode: 1
@@ -87,7 +86,7 @@ Material:
     - _ZWrite: 1
     - _ZWriteControl: 0
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 0}
+    - _Color: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
     - _NoiseColor: {r: 1, g: 1, b: 1, a: 0}
     - _UV_Tiling: {r: 1, g: 1, b: 0, a: 0}
