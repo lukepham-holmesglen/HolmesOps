@@ -197,6 +197,7 @@ MonoBehaviour:
   impactAnimationName: Impact
   impactAnimationBlendTime: 0.1
   impactLayerName: Upper Body
+  deathCleanupDelay: 3
 --- !u!114 &5036459351860639615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -612,6 +613,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: -9063589543538667217, guid: 9fbee6f1c7f61b040b41174934401377, type: 3}
+      propertyPath: m_UpdateWhenOffscreen
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9fbee6f1c7f61b040b41174934401377, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -704,6 +709,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 2bc89290a95e27c4484f34547c2f8f4f, type: 2}
+    - target: {fileID: 5866666021909216657, guid: 9fbee6f1c7f61b040b41174934401377, type: 3}
+      propertyPath: m_CullingMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 9fbee6f1c7f61b040b41174934401377, type: 3}
       propertyPath: m_ApplyRootMotion
       value: 0

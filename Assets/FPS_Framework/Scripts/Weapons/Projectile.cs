@@ -170,6 +170,14 @@ public class Projectile : MonoBehaviour
         
         float calculatedForce = impactForce;
 
+        // Trigger a fake wall if the projectile hits one
+        FakeWall fakeWall = hitCollider.GetComponentInParent<FakeWall>();
+
+        if (fakeWall != null)
+        {
+            fakeWall.TakeDamage(1f, hitPoint);
+        }
+
         // Handle different surface types
         if (hitCollider.CompareTag("Concrete"))
         {
