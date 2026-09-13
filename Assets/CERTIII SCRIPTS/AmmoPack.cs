@@ -2,26 +2,23 @@ using UnityEngine;
 
 public class AmmoPack : MonoBehaviour
 {
-    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    /// 
-    /// Variable for the amount of ammo to add
-    /// set up an OnTriggerEnter function
-    /// check if the collider has the "Player" tag
-    /// if it does access:
-    /// collider.gameObject.GetComponent<Character>().equippedWeapon.AmmoPickup(yourAmount);
-    /// make sure to delete the pack on pickup.
-    /// 
-    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    [SerializeField] private int ammoAmount = 30;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void OnTriggerEnter(Collider other)
     {
-        
-    }
+        // Check if the collider belongs to the Player
+        if (other.CompareTag("Player"))
+        {
+            // Access the Character component and add ammo to the equipped weapon
+            Character character = other.GetComponent<Character>();
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+            if (character != null && character.equippedWeapon != null)
+            {
+                character.equippedWeapon.AmmoPickup(ammoAmount);
+
+                // Destroy the ammo pack object upon pickup
+                Destroy(gameObject);
+            }
+        }
     }
 }
