@@ -266,7 +266,7 @@ MonoBehaviour:
   myAgent: {fileID: 3747615637351776069}
   animator: {fileID: 7863741613729671638}
   roamingRange: 10
-  detectRange: 50
+  detectRange: 10
   attackRange: 2
   detectionDelay: 0.5
   walkSpeed: 1
@@ -275,7 +275,7 @@ MonoBehaviour:
   patrolWaitTime: 2
   randomPatrolChance: 0.3
   maxPatrolAttempts: 10
-  attackDamage: 20
+  attackDamage: 25
   attackCooldown: 1.5
   attackAnimationTime: 1.2
   playerMask:
@@ -331,7 +331,7 @@ MonoBehaviour:
   zombieAI: {fileID: 2543122245406365710}
   animator: {fileID: 7863741613729671638}
   ragdollController: {fileID: 6236167556127385281}
-  maxHealth: 5
+  maxHealth: 3
   currentHealth: 0
   disableCollisionOnDeath: 1
   collisionDisableDelay: 0.1

@@ -139,13 +139,13 @@ MonoBehaviour:
   myAgent: {fileID: 3232088173472311356}
   animator: {fileID: 2307198271415958463}
   roamingRange: 5
-  detectRange: 100
+  detectRange: 20
   attackRange: 10
   detectionDelay: 1
   attackTarget: {fileID: 0}
   barrelPosition: {fileID: 1792946253866878163}
-  accuracy: 0.65
-  maxSpreadAngle: 30
+  accuracy: 0.755
+  maxSpreadAngle: 4
   projectilePrefab: {fileID: 6882052110130303106, guid: 53f6730cf0e358542837cdf8165d4d2f, type: 3}
   projectileImpulse: 400
   muzzleFlashParticles: {fileID: 3589898567962218719}
@@ -197,6 +197,7 @@ MonoBehaviour:
   impactAnimationName: Impact
   impactAnimationBlendTime: 0.1
   impactLayerName: Upper Body
+  deathCleanupDelay: 3
 --- !u!114 &5036459351860639615
 MonoBehaviour:
   m_ObjectHideFlags: 0

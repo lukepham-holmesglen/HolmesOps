@@ -258,7 +258,7 @@ public class Projectile : MonoBehaviour
                 }
                 
                 // Apply simple damage
-                int damage = 15; // Fixed damage value
+                int damage = 20; // Fixed damage value
                 player.ChangeCurrentHealth(-damage);
                 
                 // Spawn blood effect on player hit
